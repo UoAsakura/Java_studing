@@ -104,53 +104,94 @@ import java.util.Scanner;
 //}
 
 
+//public class Lesson_1 {
+//    public static void main(String[] args) {
+//        Scanner scan = new Scanner(System.in);
+//        int size = scan.nextInt();
+//        int rand_num = scan.nextInt();
+//        int[] arr = new int[size];
+//        int indMaxVar = 0;
+//        int MaxVar = -2147483648;
+//        int indNegVar = 0;
+//        int NegVar = 0;
+//        boolean flag = false;
+//        Random rand = new Random(rand_num);
+//        for (int i = 0; i < arr.length; i++) {
+//            arr[i] = rand.nextInt(-5, 16);
+//            System.out.printf("%d ", arr[i]);
+//            if (arr[i] > MaxVar) {
+//                indMaxVar = i;
+//                MaxVar = arr[i];
+//            }
+//            if (arr[i] < 0) {
+//                flag = true;
+//                indNegVar = i;
+//                NegVar = arr[i];
+//            }
+//        }
+//        System.out.println();
+//        if (flag) {
+//            arr[indMaxVar] = NegVar;
+//            arr[indNegVar] = MaxVar;
+//            for (int el : arr) {
+//                System.out.printf("%d ", el);
+//
+//            }
+//        } else {
+//            for (int el : arr) {
+//                System.out.printf("%d ", el);
+//            }
+//
+//        }
+//    }
+//}
+//import java.util.Random;
+//import java.util.Scanner;
+//import java.util.Arrays;
+
+//public class Lesson_1 {
+//    public static void main(String[] args) {
+//        Scanner scan = new Scanner(System.in);
+//        int arr_size = scan.nextInt();
+//        int rand_var = scan.nextInt();
+//        int cont_var = scan.nextInt();
+//        Random rand = new Random(rand_var);
+//        int[] arr = new int[arr_size];
+//        for (int i = 0; i < arr_size; i++) {
+//            arr[i] = rand.nextInt(2, 16);
+//        }
+//        Arrays.sort(arr);
+//        System.out.println(Arrays.toString(arr));
+//        int rubicon = Arrays.binarySearch(arr, cont_var);
+//        if (rubicon > -1) {
+//            {
+//                System.out.println(Arrays.toString(Arrays.copyOf(arr, rubicon + 1)));
+//            }
+//        } else {
+//            System.out.println("ERROR");
+//        }
+//    }
+//}
+
+import java.util.Arrays;
+
 public class Lesson_1 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int size = scan.nextInt();
-        int rand_num = scan.nextInt();
-        int[] arr = new int[size];
-        int indMaxVar = 0;
-        int MaxVar = -2147483648;
-        int indNegVar = 0;
-        int NegVar = 0;
-        boolean flag = false;
-        Random rand = new Random(rand_num);
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = rand.nextInt(-5, 16);
-            System.out.printf("%d ", arr[i]);
-            if (arr[i] > MaxVar) {
-                indMaxVar = i;
-                MaxVar = arr[i];
-            }
-            if (arr[i] < 0) {
-                flag = true;
-                indNegVar = i;
-                NegVar = arr[i];
-            }
+        int arr_size = scan.nextInt();
+        int rand_var = scan.nextInt();
+        int left_boundary = scan.nextInt();
+        int right_boundary = scan.nextInt();
+        Random rand = new Random(rand_var);
+        int[] arr = new int[arr_size];
+        for (int i = 0; i < arr_size; i++) {
+            arr[i] = rand.nextInt(10, 21);
         }
-        System.out.println();
-        if (flag) {
-            arr[indMaxVar] = NegVar;
-            arr[indNegVar] = MaxVar;
-            for (int el : arr) {
-                System.out.printf("%d ", el);
-
-            }
-        } else {
-            for (int el : arr) {
-                System.out.printf("%d ", el);
-            }
-
-        }
+        System.out.println(Arrays.toString(arr));
+        Arrays.sort(arr, left_boundary, right_boundary + 1);
+        System.out.println(Arrays.toString(arr));
     }
 }
-
-
-
-
-
-
 
 
 
